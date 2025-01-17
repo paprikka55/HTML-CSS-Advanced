@@ -121,14 +121,14 @@
 			}
 		}
 
-		&-button:hover{
+		&-button:hover {
 			background: $pinkColor;
 
-			svg{
+			svg {
 				fill: $backgroundWhite;
 			}
 
-			p{
+			p {
 				color: $backgroundWhite;
 			}
 		}
