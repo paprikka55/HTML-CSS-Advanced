@@ -1,0 +1,66 @@
+@mixin linkAnimation() {
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+
+@mixin textStyle() {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	color: #000;
+}
+
+@mixin productCard($cardNumber) {
+	.card-#{$cardNumber} {
+		background: url("../../img/card-img#{$cardNumber}.webp");
+	}
+}
+
+@mixin breadcrumbs() {
+
+	.breadcrumbs {
+		height: 148px;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+    &-section{
+      background: #f8f3f4;
+    }
+		&__caption {
+			font-weight: 400;
+			font-size: 24px;
+		}
+
+		&__crumbs {
+      ul>li{
+        font-weight: 300;
+        font-size: 14px;
+        color: #636363;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+      }
+
+      ul>li:first-child:before {
+        display: none;
+      }
+
+      ul>li:before {
+        content: '/';
+        margin: -2px 5px 0 5px;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 300;
+        font-size: 14px;
+        color: #636363;
+        line-height: 1;
+      }
+		}
+
+    &__current-crumb{
+      font-weight: 700;
+    }
+	}
+}

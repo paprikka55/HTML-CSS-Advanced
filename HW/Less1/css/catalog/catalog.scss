@@ -1,0 +1,153 @@
+@import "../index/style.scss";
+
+@include breadcrumbs();
+
+.slider {
+	display: flex;
+	flex-direction: column;
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: #f7f7f7;
+		border: 1px solid $borderColor;
+
+		&-button {
+			height: 47px;
+			width: 47px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(42, 42, 42, 0.15);
+		}
+
+		&-button:hover svg {
+			fill: $pinkColor;
+		}
+
+		&-image {
+			padding-top: 11px;
+			padding-bottom: 42px;
+		}
+	}
+
+	&__caption {
+		border: 1px solid $borderColor;
+		padding-top: 65px;
+		padding-bottom: 65px;
+		margin-top: -60px;
+		background: $backgroundWhite;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__description {
+		border-bottom: 1px solid $borderColor;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 65px;
+		&-header {
+			font-weight: 400;
+			font-size: 14px;
+			color: $pinkColor;
+		}
+
+		&-separator {
+			color: $pinkColor;
+			width: 63px;
+			border-top: 3px solid $pinkColor;
+			margin-top: 12px;
+			margin-bottom: 12px;
+		}
+
+		&-name {
+			font-weight: 400;
+			font-size: 18px;
+			color: #4d4d4d;
+		}
+
+		&-body {
+			font-weight: 400;
+			font-size: 14px;
+			color: #5e5e5e;
+			margin-top: 49px;
+			margin-bottom: 32px;
+			max-width: 570px;
+		}
+
+		&-price {
+			font-weight: 400;
+			font-size: 24px;
+			color: $pinkColor;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		margin-top: 65px;
+		margin-bottom: 65px;
+		align-items: center;
+		&-menu {
+			display: flex;
+			gap: 23px;
+		}
+
+		&-combobox {
+			font-weight: 400;
+			font-size: 14px;
+			color: #6f6e6e;
+		}
+
+		&-button {
+			border: 1px solid $pinkColor;
+			background: none;
+			display: flex;
+			height: 49px;
+			width: 212px;
+			align-items: center;
+			gap: 23px;
+			padding-left: 26px;
+
+			&-caption {
+				font-weight: 400;
+				font-size: 16px;
+				color: $pinkColor;
+			}
+		}
+
+		&-button:hover{
+			background: $pinkColor;
+
+			svg{
+				fill: $backgroundWhite;
+			}
+
+			p{
+				color: $backgroundWhite;
+			}
+		}
+	}
+}
+
+.products {
+	margin-top: 128px;
+	margin-bottom: 128px;
+	&__grid {
+		grid-template-rows: repeat(1, 1fr);
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.subscribe {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}

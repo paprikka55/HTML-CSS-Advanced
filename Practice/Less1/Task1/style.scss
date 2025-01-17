@@ -1,0 +1,44 @@
+@import "vars";
+@import "mixins";
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	width: $siteWidth;
+	margin: 0 auto;
+
+
+  .color_text{
+    color: $textColor;
+  }
+}
+
+.nav{
+  display: flex;
+  gap: $navGap;
+
+  &__link{
+    @extend %nav-font;
+    text-decoration: none;
+  }
+}
+
+.content{
+  @include center();
+  gap: $navGap;
+
+  &__item{
+    width: $siteWidth / 4;
+    height: 200px;
+    border: $contentBorder;
+  }
+}
+
+%nav-font{
+  font-family: sans-serif;
+  font-style: normal;
+}
+
+

@@ -1,0 +1,231 @@
+@mixin addTabletMedia() {
+  @media(min-width: $minWidthPage) and (max-width: $widthPage) {
+    .container {
+      width: $widthTablet;
+    }
+  
+    .header__right-menu {
+      gap: 32px;
+    }
+  
+    .banner__content {
+      justify-content: space-around;
+    }
+  
+    .banner__logo {
+      display: flex;
+      justify-content: center;
+      max-height: 368px;
+      align-items: center;
+    }
+  
+    .banner__img {
+      max-height: 368px;
+    }
+  
+    .banner__slogan {
+      margin-top: 138px;
+      margin-bottom: 138px;
+      margin-left: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .banner__header {
+      font-size: 44px;
+    }
+  
+    .banner__text {
+      font-size: 24px;
+    }
+  
+    .offer {
+      margin-bottom: 109.92px;
+      gap: 12px;
+    }
+  
+    .offer__item {
+      width: 232px;
+      height: 167px;
+    }
+  
+    .accesories {
+      height: 116px;
+    }
+  
+    .products {
+      gap: 32px;
+    }
+  
+    .products__caption {
+      gap: 3.3px;
+      margin-bottom: 40px;
+    }
+  
+    .products__grid {
+      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  
+    .products__card-caption {
+      padding-left: 16px;
+    }
+  
+    .features__content {
+      gap: 49px;
+      flex-direction: column;
+      padding-top: 48px;
+      padding-bottom: 64px;
+      align-items: center;
+    }
+  
+    .features__item {
+      max-width: 360px;
+    }
+  
+    .subscribe {
+      height: 614px;
+      background: url("../img/subscribe-background-media-768.webp");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% auto;
+    }
+  
+    .subscribe__content {
+      flex-direction: column;
+  
+    }
+  
+    .subscribe__info {
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
+  
+    .subscribe__init {
+      gap: 27px;
+    }
+  }
+}
+
+@mixin addPhoneMedia(){
+  @media(max-width: #{$minWidthPage - 1}) {
+    .container {
+      width: $widthPhone;
+    }
+  
+    .hidden-item {
+      visibility: hidden;
+      position: absolute;
+      left: -999999999px;
+    }
+  
+    .banner__slogan {
+      margin-top: 148px;
+      margin-bottom: 148px;
+      padding-left: 15px;
+    }
+  
+    .banner__header {
+      font-size: 38px;
+    }
+  
+    .banner__text {
+      font-size: 20px;
+    }
+  
+    .offer {
+      margin-top: 64px;
+      margin-bottom: 64px;
+      gap: 32px;
+    }
+  
+    .offer__item {
+      width: 343px;
+    }
+  
+    .accesories {
+      height: 111px;
+      background-position: center;
+      background-size: auto 100%;
+    }
+  
+    .products {
+      gap: 41px;
+      margin-bottom: 85px;
+    }
+  
+    .products__caption {
+      margin-bottom: 23px;
+    }
+  
+    .products__grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  
+    .products__card-caption {
+      padding-left: 16px;
+    }
+  
+    .features__content {
+      flex-direction: column;
+      gap: 47px;
+      padding-top: 48px;
+      padding-bottom: 81px;
+    }
+  
+    .subscribe {
+      background: url("../img/subscribe-background-media-mobile.webp");
+      background-repeat: no-repeat;
+      height: 550px;
+      background-position: center;
+      background-size: auto 100%;
+    }
+  
+    .subscribe__content {
+      flex-direction: column;
+    }
+  
+    .subscribe__info {
+      padding-top: 64px;
+      padding-bottom: 59px;
+    }
+  
+    .subscribe__logo {
+      height: 92px;
+    }
+  
+    .subscribe__text {
+      font-size: 18px;
+    }
+  
+    .subscribe__init {
+      gap: 22px;
+    }
+  
+    .subscribe__init-text {
+      font-size: 14px;
+    }
+  
+    .subscribe__form {
+      height: 47px;
+    }
+  
+    .subscribe__input {
+      width: 245px;
+    }
+  
+    .subscribe__button {
+      width: 96px;
+    }
+  
+    .footer__content {
+      flex-direction: column-reverse;
+      gap: 40px;
+      padding-top: 43px;
+      padding-bottom: 9px;
+    }
+  }
+}
