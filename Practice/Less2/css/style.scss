@@ -1,0 +1,245 @@
+@import "vars";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.box-content {
+	overflow: hidden;
+}
+
+:root {
+	--font-family: "Lato", sans-serif;
+	--second-family: "Roboto", sans-serif;
+	--third-family: ".LastResort", sans-serif;
+}
+
+.header {
+	background: $backgroundMenu;
+	height: 75px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	padding-right: 25px;
+	&__nav {
+		position: relative;
+		&-checkbox {
+			position: absolute;
+			visibility: hidden;
+			&:checked + .header__nav-burger::before {
+				top: 11px;
+				transform: rotate(45deg);
+				box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+				transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+			}
+			&:checked + .header__nav-burger::after {
+				bottom: 11px;
+				transform: rotate(-45deg);
+				transition: bottom 0.3s, transform 0.3s 0.15s;
+			}
+			&:checked ~ .header__nav-menu {
+				transform: translateX(0);
+			}
+		}
+
+		&-burger {
+			cursor: pointer;
+			display: block;
+			position: relative;
+			border: none;
+			background: transparent;
+			width: 40px;
+			height: 26px;
+			margin: 30px auto;
+			&:hover {
+				opacity: 0.7;
+				transition: 0.3s;
+			}
+			&::before,
+			&::after {
+				content: "";
+				left: 0;
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 4px;
+				border-radius: 10px;
+				background: #000;
+			}
+			&::before {
+				top: 0;
+				box-shadow: 0 11px 0 #000;
+				transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+			}
+
+			&::after {
+				bottom: 0;
+				transition: bottom 0.3s 0.15s, transform 0.3s;
+			}
+		}
+
+		&-menu {
+			top: 81px;
+			right: -25px;
+			position: absolute;
+			box-shadow: 6px 4px 35px 0 rgba(0, 0, 0, 0.21);
+			background: $backgroundMenu;
+			width: 232px;
+			z-index: 1;
+			transform: translateX(100%);
+			transition: 0.3s;
+			&-content {
+				padding: 37px 32px 32px 32px;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+			&-header {
+				margin-bottom: 4px;
+				font-family: var(--font-family);
+				font-weight: 700;
+				font-size: 14px;
+				color: #000;
+			}
+			&-item {
+				cursor: pointer;
+				&[open] {
+					transition: 0.3s;
+				}
+				&-header {
+					font-family: var(--font-family);
+					font-weight: 400;
+					font-size: 14px;
+					color: #f16d7f;
+					&:hover {
+						transition: opacity 0.4s;
+						opacity: 0.7;
+					}
+					&::-webkit-details-marker,
+					&::marker {
+						display: none;
+						content: "";
+					}
+				}
+				&-content {
+					padding-left: 21px;
+					padding-top: 12px;
+					display: flex;
+					flex-direction: column;
+					gap: 11px;
+				}
+				&-link {
+					font-family: var(--font-family);
+					font-weight: 400;
+					font-size: 14px;
+					color: #6f6e6e;
+					&:hover {
+						transition: opacity 0.4s;
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+	}
+}
+
+.menu1 {
+	& > summary::marker {
+		display: none;
+		content: "";
+	}
+
+	&__closed-marker {
+		display: contents;
+	}
+
+	&__open-marker {
+		display: none;
+	}
+
+	&[open] &__summary {
+		color: #cf0e28;
+	}
+
+	&[open] &__closed-marker {
+		display: none;
+	}
+	&[open] &__open-marker {
+		display: contents;
+	}
+	&__summary {
+		color: #0ecf3e;
+		cursor: pointer;
+	}
+}
+
+.sort {
+	padding-left: 50px;
+	padding-top: 50px;
+	padding-bottom: 64px;
+	display: flex;
+	gap: 28px;
+	position: relative;
+
+	&__details {
+		cursor: pointer;
+		position: inherit;
+		&-summary {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			&:hover {
+				transition: opacity 0.4s;
+				opacity: 0.7;
+			}
+			&::-webkit-details-marker {
+				display: none;
+			}
+		}
+		&-header {
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 14px;
+			color: #6f6e6e;
+		}
+		&-openedblock {
+			position: absolute;
+			left: -9px;
+			top: 22px;
+			box-shadow: 6px 4px 35px 0 rgba(0, 0, 0, 0.21);
+			background: #fff;
+			padding: 7px 9px;
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			width: 79px;
+			&-item {
+				display: flex;
+				gap: 9px;
+				align-items: center;
+				label {
+					font-family: var(--second-family);
+					font-weight: 400;
+					font-size: 14px;
+					color: #6f6e6e;
+				}
+				input[type="checkbox"] {
+					accent-color: #f16d7f;
+				}
+			}
+		}
+	}
+}
+
+.end {
+	height: 1080px;
+	background: #ffc1c9;
+}

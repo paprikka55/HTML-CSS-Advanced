@@ -16,6 +16,11 @@
 	}
 }
 
+@mixin notDisplayDetailsMarker(){
+  display: none;
+  content: '';
+}
+
 @mixin breadcrumbs() {
 
 	.breadcrumbs {

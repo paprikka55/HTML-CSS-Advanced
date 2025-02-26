@@ -11,7 +11,8 @@
     opacity: 1;
   }
 }
-.header__button:hover, a:hover {
+.header__button:hover, .header__right-nav-burger:hover, a:hover,
+button:hover {
   opacity: 0.7;
 }
 
@@ -27,12 +28,23 @@ body {
   scroll-behavior: smooth;
 }
 
-a, button, svg {
+a,
+button,
+svg {
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, button {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+span {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   color: #000;
@@ -49,6 +61,10 @@ img {
   justify-self: center;
 }
 
+.box-content {
+  overflow: hidden;
+}
+
 .header {
   background: #222222;
   position: relative;
@@ -60,10 +76,11 @@ img {
   width: 200px;
   padding: 32px 0 32px 32px;
   background: #fff;
-  display: none;
   flex-direction: column;
   gap: 24px;
   box-shadow: -6px 7px 17px 9px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  transition: 0.3s;
 }
 .header__menu--active {
   display: flex;
@@ -72,11 +89,14 @@ img {
 .header__menu-caption {
   font-weight: 700;
   font-size: 14px;
+  margin-bottom: 4px;
 }
 .header__menu-section {
   display: flex;
   gap: 12px;
   flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .header__menu-section-name {
   font-size: 14px;
@@ -103,11 +123,18 @@ img {
   gap: 33px;
   align-items: flex-end;
 }
+.header__right-nav-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.header__right-nav-checkbox:checked ~ .header__menu {
+  transform: translateX(0);
+}
 .header__button {
   background: none;
 }
 .banner {
-  background: #F1E4E6;
+  background: #f1e4e6;
 }
 .banner__content {
   display: flex;
@@ -213,7 +240,7 @@ img {
   transition: all 0.4s;
 }
 .products__card {
-  background: #F8F8F8;
+  background: #f8f8f8;
 }
 .products__card:hover > .products__cart-button > .products__shadow {
   z-index: 1;
@@ -243,7 +270,7 @@ img {
   color: #f16d7f;
 }
 .products__cart-button {
-  width: 100%;
+  width: 360px;
   height: 420px;
   background-repeat: no-repeat;
   z-index: 1;
@@ -273,6 +300,9 @@ img {
   border: 1px solid #fff;
   cursor: pointer;
 }
+.products__add-to-cart-button span {
+  color: #fff;
+}
 .products__add-to-cart-button:hover {
   transform: scale(1.2);
 }
@@ -289,6 +319,12 @@ img {
   font-weight: 400;
   font-size: 16px;
   color: #f16d7f;
+}
+.products__button span {
+  color: #f16d7f;
+}
+.products__button:hover span {
+  color: #fff;
 }
 
 .card-1 {
@@ -454,7 +490,10 @@ img {
   color: #f16d7f;
 }
 
-.subscribe__button:hover, .products__button:hover, .footer__button:hover, .footer__button:hover svg {
+.subscribe__button:hover,
+.products__button:hover,
+.footer__button:hover,
+.footer__button:hover svg {
   background: #f16d7f;
   color: #fff;
   fill: #fff;
