@@ -1,0 +1,117 @@
+@import "../index/style.scss";
+@include breadcrumbs();
+
+.registration {
+	margin-top: 64px;
+	margin-bottom: 96px;
+	display: flex;
+	justify-content: space-between;
+	gap: 128px;
+
+	&__form {
+		width: 360px;
+	}
+
+	&__loyalty {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
+}
+
+.registration-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	&__label {
+		font-weight: 300;
+		font-size: 16px;
+	}
+
+	&__input {
+		border: 1px solid #a4a4a4;
+		padding-top: 13px;
+		padding-bottom: 16px;
+		padding-left: 17px;
+		outline: none;
+		width: 360px;
+		&::placeholder {
+			color: #b1b1b1;
+		}
+	}
+
+	&__sex-box {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__advice {
+		font-weight: 300;
+		font-size: 13px;
+		color: #b1b1b1;
+		margin-bottom: 28px;
+	}
+
+	&__button {
+		padding: 17px 30px;
+		width: 167px;
+		background: $pinkColor;
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		color: $backgroundWhite;
+	}
+
+	&__button svg {
+		fill: $backgroundWhite;
+	}
+}
+
+.sex-box {
+	&__radio-box {
+		margin-top: 11px;
+		margin-bottom: 13px;
+		display: flex;
+		gap: 10px;
+	}
+
+	&__radio {
+		border: 1px solid #a4a4a4;
+		transform: scale(1.4);
+	}
+
+	&__label {
+		@include defaultFont();
+		font-weight: 300;
+		font-size: 11px;
+		color: #000;
+	}
+}
+
+.loyalty {
+	&__header {
+		font-weight: 300;
+		font-size: 24px;
+	}
+
+	&__text {
+		font-weight: 300;
+		font-size: 24px;
+	}
+
+	&__perks {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__perk {
+		font-weight: 300;
+		font-size: 24px;
+	}
+
+	&__perk::before {
+		content: url("../../img/list_item.svg");
+		margin-right: 22px;
+	}
+}

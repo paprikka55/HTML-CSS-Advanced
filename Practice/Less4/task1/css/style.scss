@@ -1,0 +1,14 @@
+@import "../../../../HW/Less1/css/index/style.scss";
+
+.breadcrumbs {
+	background: #f8f3f4;
+	padding-top: 60px;
+	padding-bottom: 60px;
+  
+	&__content {}
+
+	&__header {
+		font-weight: 400;
+		font-size: 24px;
+	}
+}

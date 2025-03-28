@@ -21,6 +21,10 @@
   content: '';
 }
 
+@mixin defaultFont() {
+  font-family: "Lato", sans-serif;
+}
+
 @mixin breadcrumbs() {
 
 	.breadcrumbs {
